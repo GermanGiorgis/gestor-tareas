@@ -1,0 +1,55 @@
+:root {
+  --bg: #eaf3ea;
+  --surface: #ffffff;
+  --dark: #16181a;
+  --dark-soft: #23261f;
+  --green: #3caf5f;
+  --green-dark: #2c8c49;
+  --green-soft: #dcf1e0;
+  --ink: #16181a;
+  --ink-dim: #6b756c;
+  --border: #d7e6d9;
+  --orange: #ff8a3d;
+
+  --prioridad-alta: #ff8a3d;
+  --prioridad-media: #3caf5f;
+  --prioridad-baja: #a9b6ab;
+
+  --shadow: rgba(22, 24, 26, 0.14);
+
+  --font-display: "Poppins", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-display);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--green-dark);
+  outline-offset: 2px;
+}
