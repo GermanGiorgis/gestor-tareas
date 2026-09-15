@@ -1,0 +1,139 @@
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 11pt;
+  line-height: 1.55;
+  color: #1f2430;
+}
+
+/* Portada */
+.cover {
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-top: 6px solid #2f6f4f;
+}
+.cover h1 {
+  border: none;
+  font-size: 30pt;
+  margin: 0 0 2mm 0;
+  color: #16181a;
+}
+.cover h2 {
+  border: none;
+  page-break-before: avoid;
+  font-size: 20pt;
+  font-weight: 400;
+  color: #2f6f4f;
+  margin: 0 0 20mm 0;
+}
+.cover-meta {
+  font-size: 12pt;
+  color: #444;
+}
+.cover-meta p { margin: 2mm 0; }
+.cover-meta strong { color: #16181a; }
+
+/* Separadores = salto de página entre secciones */
+hr {
+  border: none;
+  page-break-after: always;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+h1 {
+  font-size: 22pt;
+  color: #16181a;
+  border-bottom: 2px solid #2f6f4f;
+  padding-bottom: 3mm;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 16pt;
+  color: #16181a;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2mm;
+  margin-top: 10mm;
+}
+
+h3 {
+  font-size: 12.5pt;
+  color: #2f6f4f;
+  margin-top: 7mm;
+}
+
+/* Evita que un párrafo corto quede solo justo antes de una imagen/tabla
+   que se empuja a la página siguiente por no entrar completa */
+p:has(+ img), p:has(+ table) {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+p, li { text-align: justify; }
+
+a { color: #1a6b45; text-decoration: none; }
+
+code {
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 9.5pt;
+  background: #f2f3f5;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+pre {
+  background: #f2f3f5;
+  padding: 3mm 4mm;
+  border-radius: 4px;
+  font-size: 9.5pt;
+  overflow-x: auto;
+  page-break-inside: avoid;
+  border: 1px solid #e0e2e6;
+}
+pre code { background: none; padding: 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 5mm 0;
+  font-size: 9.5pt;
+}
+thead { display: table-header-group; }
+tr { break-inside: avoid; page-break-inside: avoid; }
+th, td {
+  border: 1px solid #d5d8dd;
+  padding: 2mm 3mm;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #eef4f0;
+  color: #16181a;
+  font-weight: 600;
+}
+tr:nth-child(even) td { background: #fafbfb; }
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 6mm auto;
+  page-break-inside: avoid;
+}
+
+blockquote {
+  border-left: 3px solid #2f6f4f;
+  margin: 4mm 0;
+  padding: 1mm 5mm;
+  color: #444;
+  background: #f7f9f8;
+}

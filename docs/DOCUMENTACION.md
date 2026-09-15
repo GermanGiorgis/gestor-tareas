@@ -1,9 +1,20 @@
-# Documentación del Proyecto — Gestor de Tareas
+<div class="cover">
+
+# Documentación del Proyecto
+## Gestor de Tareas
+
+<div class="cover-meta">
 
 **Cliente:** Estudio Cronos (consultora freelance de diseño y desarrollo)
+
 **Proveedor:** German Giorgis — Desarrollo de software
+
 **Versión del documento:** 1.0
+
 **Fecha:** Septiembre 2026
+
+</div>
+</div>
 
 ---
 

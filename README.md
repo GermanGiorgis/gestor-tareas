@@ -3,7 +3,7 @@
 Aplicación full-stack de gestión de tareas con autenticación, tablero Kanban
 con drag & drop, categorías y paquetes de tareas compartidos por invitación.
 
-### 🔗 [gestor-tareas-swart.vercel.app](https://gestor-tareas-swart.vercel.app)  ·  📄 [Documentación completa](docs/DOCUMENTACION.md)
+### 🔗 [gestor-tareas-swart.vercel.app](https://gestor-tareas-swart.vercel.app)  ·  📄 [Documentación (Markdown)](docs/DOCUMENTACION.md)  ·  📕 [Documentación (PDF)](docs/DOCUMENTACION.pdf)
 
 ![Tablero Kanban del Gestor de Tareas](docs/screenshot.png)
 
