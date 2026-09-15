@@ -5,7 +5,7 @@ con drag & drop, categorías y paquetes de tareas compartidos por invitación.
 
 ### 🔗 [gestor-tareas-swart.vercel.app](https://gestor-tareas-swart.vercel.app)
 
-<!-- TODO: agregar una captura del tablero acá -->
+![Tablero Kanban del Gestor de Tareas](docs/screenshot.png)
 
 ## Stack
 
