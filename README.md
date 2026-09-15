@@ -1,14 +1,17 @@
 # Gestor de Tareas
 
-Aplicación full-stack de gestión de tareas con autenticación, categorías y un
-tablero Kanban con drag & drop.
+Aplicación full-stack de gestión de tareas con autenticación, tablero Kanban
+con drag & drop, categorías y paquetes de tareas compartidos por invitación.
 
-<!-- TODO: agregar una captura del tablero acá antes de subir a GitHub -->
+### 🔗 [gestor-tareas-swart.vercel.app](https://gestor-tareas-swart.vercel.app)
+
+<!-- TODO: agregar una captura del tablero acá -->
 
 ## Stack
 
 - **Backend**: Java 21 + Spring Boot 4, Spring Data JPA, Spring Security (JWT), PostgreSQL
 - **Frontend**: React + TypeScript (Vite), @dnd-kit para el drag & drop
+- **Infraestructura**: Vercel (frontend), Railway (backend + PostgreSQL)
 
 ## Arquitectura
 
@@ -27,10 +30,12 @@ JWT que intercepta las requests antes de llegar a los controllers.
 
 - [x] Registro / login de usuario (JWT)
 - [x] CRUD de tareas
-- [x] Categorías
-- [x] Prioridad y fecha límite
 - [x] Tablero Kanban con drag & drop (persistente)
+- [x] Categorías y prioridades (baja / media / inmediata)
 - [x] Filtros por categoría, estado y búsqueda por texto
+- [x] Paquetes de tareas compartidos: invitá a alguien por email para que
+      vea, agregue, edite o elimine tareas del mismo paquete
+- [x] Diseño responsive
 
 ## Cómo correrlo localmente
 
@@ -48,11 +53,14 @@ Variables de entorno disponibles (todas opcionales, con default para desarrollo)
 
 | Variable | Default |
 |---|---|
+| `DB_HOST` | `localhost` |
+| `DB_PORT` | `5432` |
 | `DB_NAME` | `gestor_tareas` |
 | `DB_USER` | `postgres` |
 | `DB_PASSWORD` | _(vacío)_ |
 | `JWT_SECRET` | valor de desarrollo, **cambiar en producción** |
 | `CORS_ALLOWED_ORIGIN` | `http://localhost:5173` |
+| `PORT` | `8080` |
 
 ### Frontend
 
@@ -70,16 +78,29 @@ Por defecto apunta a `http://localhost:8080`. Para cambiarlo, definir
 ```
 POST   /api/auth/registro
 POST   /api/auth/login
+
+GET    /api/paquetes
+POST   /api/paquetes
+DELETE /api/paquetes/{id}
+GET    /api/paquetes/{id}/miembros
+DELETE /api/paquetes/{id}/miembros/{usuarioId}
+POST   /api/paquetes/{id}/invitaciones
+
+GET    /api/invitaciones
+POST   /api/invitaciones/{id}/aceptar
+POST   /api/invitaciones/{id}/rechazar
+
 GET    /api/categorias
 POST   /api/categorias
 DELETE /api/categorias/{id}
-GET    /api/tareas?estado=&categoriaId=&texto=
-POST   /api/tareas
-PUT    /api/tareas/{id}
-PATCH  /api/tareas/{id}/mover
-DELETE /api/tareas/{id}
+
+GET    /api/paquetes/{paqueteId}/tareas?estado=&categoriaId=&texto=
+POST   /api/paquetes/{paqueteId}/tareas
+PUT    /api/paquetes/{paqueteId}/tareas/{id}
+PATCH  /api/paquetes/{paqueteId}/tareas/{id}/mover
+DELETE /api/paquetes/{paqueteId}/tareas/{id}
 ```
 
 Todos los endpoints (excepto `/api/auth/**`) requieren un header
-`Authorization: Bearer <token>` y devuelven solo los datos del usuario
-autenticado.
+`Authorization: Bearer <token>`. Las rutas de paquetes y tareas verifican
+que el usuario sea miembro del paquete antes de permitir el acceso.
