@@ -7,6 +7,13 @@ con drag & drop, categorías y paquetes de tareas compartidos por invitación.
 
 ![Tablero Kanban del Gestor de Tareas](docs/screenshot.png)
 
+<table>
+<tr>
+<td><img src="docs/screenshot-drag.png" alt="Drag and drop de tareas" width="280"></td>
+<td><img src="docs/screenshot-modal.png" alt="Modal de nueva tarea" width="280"></td>
+</tr>
+</table>
+
 ## Stack
 
 - **Backend**: Java 21 + Spring Boot 4, Spring Data JPA, Spring Security (JWT), PostgreSQL
