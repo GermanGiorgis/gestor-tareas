@@ -451,7 +451,7 @@ en el `README.md` del repositorio.
 
 La aplicación en producción está desplegada en:
 
-- **Frontend:** [gestor-tareas-swart.vercel.app](https://gestor-tareas-swart.vercel.app) (Vercel)
+- **Frontend:** [gestor-tareas-ecru-ten.vercel.app](https://gestor-tareas-ecru-ten.vercel.app) (Vercel)
 - **Backend + base de datos:** Railway
 
 Ambos servicios están conectados al repositorio de GitHub con despliegue automático: cada
